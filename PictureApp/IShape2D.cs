@@ -13,8 +13,10 @@ namespace PictureApp
         int GetSize();
         int GetX();
         int GetY();
+        void MakeVisible();
+        void MakeInVisible();
         void SetColor(string color);
-        void SetVisibility(bool isVisible);
+        void SetSize(int size);
         void SetX(int value);
         void SetY(int value);
 

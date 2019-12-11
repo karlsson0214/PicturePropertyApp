@@ -18,33 +18,33 @@ namespace PictureApp
         public Picture()
         {
             wall = new Square2D();
-            wall.X = 100;
-            wall.Y = 300;
-            wall.Size = 200;
-            wall.Color = "Red";
-            wall.IsVisible = true;
+            wall.SetX(100);
+            wall.SetY(300);
+            wall.SetSize(200);
+            wall.SetColor("Red");
+            wall.MakeVisible();
 
             window = new Square2D();
-            window.X = 120;
-            window.Y = 340;
-            window.Size = 80;
-            window.Color = "Black";
-            window.IsVisible = true;
+            window.SetX(120);
+            window.SetY(340);
+            window.SetSize(80);
+            window.SetColor("Black");
+            window.MakeVisible();
 
             roof = new Triangle2D();
-            roof.X = 80;
-            roof.Y = 60;
-            roof.Size = 240;
-            roof.Color = "Black";
-            roof.IsVisible = true;
+            roof.SetX(80);
+            roof.SetY(60);
+            roof.SetSize(240);
+            roof.SetColor("Black");
+            roof.MakeVisible();
 
             sun = new Circle2D();
-            sun.X = 360;
-            sun.Y = 40;
-            sun.Color = "Yellow";
-            sun.IsVisible = true;
+            sun.SetX(360);
+            sun.SetY(40);
+            sun.SetColor("Yellow");
+            sun.MakeVisible();
             // to be able to set breakpoint on next line
-            sun.IsVisible = true;
+            sun.MakeVisible();
         }
     }
 }

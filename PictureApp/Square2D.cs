@@ -24,94 +24,113 @@ namespace PictureApp
         {
             
         }
+
         /// <summary>
-        /// Get color as a string or set the color as a string.
-        /// Invalid color string will render a black shape.
-        /// 
+        /// Get color as a string.
         /// </summary>
+        /// <returns>Color as a string.</returns>
         /// See <see cref="Windows.UI.Colors"/> for valid color strings.
         /// Or see: https://docs.microsoft.com/en-us/uwp/api/windows.ui.colors
-        public string Color
+        public string GetColor()
         {
-            get
-            {
-                return color;
-            }
-            set
-            {
-                if (value != null)
-                {
-                    color = value;
-                    Update();
-                }
-            }
+            return color;
         }
         /// <summary>
-        /// Read if this object is visible or set its visibility.
+        /// Get the size of the object.
         /// </summary>
-        public bool IsVisible
-        { 
-            get
-            {
-                return isVisible;
-            }
-            set
-            {
-                isVisible = value;
-                Update();
-            }
-            
-        }
-        /// <summary>
-        /// Get or set the x-coordinate of the upper left corner.
-        /// </summary>
-        public int X
+        /// <returns>Size of object in pixels.</returns>
+        public int GetSize()
         {
-            get
-            {
-                return x;
-            }
-            set
-            {
-                x = value;
-                Update();
-            }
+            return size;
         }
+
         /// <summary>
-        /// Get or set the y-coordinate of the upper left corner.
+        /// Get the x-coordinate of the upper left corner.
+        /// </summary>
+        /// <returns>x-coordinate in pixels</returns>
+        public int GetX()
+        {
+            return x;
+        }
+
+        /// <summary>
+        /// Get the y-coordinate of the upper left corner.
         /// OBS y is 0 at the top of the canvas and increases downwards.
         /// </summary>
-        public int Y
+        /// <returns>y-coordinate in pixels</returns>
+        public int GetY()
         {
-            get
-            {
-                return y;
-            }
-            set
-            {
-                y = value;
-                Update();
-            }
+            return y;
+        }
+
+        /// <summary>
+        /// Returns true if this shape is visible on the canvas.
+        /// </summary>
+        /// <returns></returns>
+        public bool IsVisible()
+        {
+            return isVisible;
+        }
+
+        /// <summary>
+        /// Make this shape visible.
+        /// </summary>
+        public void MakeInVisible()
+        {
+            isVisible = false;
+            Update();
+        }
+
+        /// <summary>
+        /// Make this shape invisible.
+        /// </summary>
+        public void MakeVisible()
+        {
+            isVisible = true;
+            Update();
+        }
+
+        /// <summary>
+        /// Set color as a string. Invalid value will make shape black.
+        /// </summary>
+        /// <param name="color">Color as a string, for example: "Blue", "Green", "Red"</param>
+        /// See <see cref="Windows.UI.Colors"/> for valid color strings.
+        /// Or see: https://docs.microsoft.com/en-us/uwp/api/windows.ui.colors
+        public void SetColor(string color)
+        {
+            this.color = color;
+            Update();
         }
         /// <summary>
-        /// Get or set the size of the object.
+        /// Set the size of the object.
         /// </summary>
-        public int Size
+        /// <param name="size">The new size in pixels.</param>
+        public void SetSize(int size)
         {
-            get
-            {
-                return size;
-            }
-            set
-            {
-                if (value > 0)
-                {
-                    size = value;
-                    Update();
-                }
-            }
+            this.size = size;
+            Update();
         }
- 
+
+        /// <summary>
+        /// Set the x-coordinate of the upper left corner.
+        /// </summary>
+        /// <param name="value">New x-coordinate in pixels from top of canvas.</param>
+        public void SetX(int value)
+        {
+            x = value;
+            Update();
+        }
+        /// <summary>
+        /// Set the y-coordinate of the upper left corner.
+        /// OBS y is 0 at the top of the canvas and increases downwards.
+        /// </summary>
+        /// <param name="value">New y-coordinate in pixels from top of canvas.</param>
+        public void SetY(int value)
+        {
+            y = value;
+            Update();
+        }
+
         // Update changes made to this object on screen.
         private void Update()
         {

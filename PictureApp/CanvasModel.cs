@@ -63,7 +63,7 @@ namespace PictureApp
             if (!shapesMap.ContainsKey(shape2D))
             {
                 // shape2D not in shapesMap
-                if (shape2D.IsVisible)
+                if (shape2D.IsVisible())
                 {
                     // shape not added yet, then add it
                     if (shape2D is Square2D)
@@ -97,7 +97,7 @@ namespace PictureApp
                 // shape2D in shapesMap
                 // find object
                 shape = shapesMap[shape2D];
-                if (!shape2D.IsVisible)
+                if (!shape2D.IsVisible())
                 {
                     // remove invisible object
                     shapesMap.Remove(shape);
@@ -112,24 +112,24 @@ namespace PictureApp
             {
                 PointCollection points = new PointCollection();
                 // lower left
-                points.Add(new Point(0, shape2D.Size));
+                points.Add(new Point(0, shape2D.GetSize()));
                 // lower right
-                points.Add(new Point(shape2D.Size, shape2D.Size));
+                points.Add(new Point(shape2D.GetSize(), shape2D.GetSize()));
                 // upper middle
-                points.Add(new Point(shape2D.Size / 2, 0));
+                points.Add(new Point(shape2D.GetSize() / 2, 0));
                 (shape as Polygon).Points = points;
             }
             else
             {
-                shape.Width = shape2D.Size;
-                shape.Height = shape2D.Size;
+                shape.Width = shape2D.GetSize();
+                shape.Height = shape2D.GetSize();
             }
 
             //default color if color string is invalid
             Windows.UI.Color color;
             try
             {
-                color = shape2D.Color.ToColor();
+                color = shape2D.GetColor().ToColor();
             }
             catch (FormatException)
             {
@@ -141,8 +141,8 @@ namespace PictureApp
             shape.Fill = new SolidColorBrush(color);
 
             // update position
-            Canvas.SetTop(shape, shape2D.Y);
-            Canvas.SetLeft(shape, shape2D.X);
+            Canvas.SetTop(shape, shape2D.GetY());
+            Canvas.SetLeft(shape, shape2D.GetX());
         }
     }
 }
