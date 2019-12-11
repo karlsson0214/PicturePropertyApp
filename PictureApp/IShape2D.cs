@@ -8,11 +8,16 @@ namespace PictureApp
 {
     interface IShape2D
     {
-        string Color { get; set; }
-        bool IsVisible { get; set; }
-        int Size { get; set; }
-        int X { get; set; }
-        int Y { get; set; }
+        string GetColor();
+        bool IsVisible();
+        int GetSize();
+        int GetX();
+        int GetY();
+        void SetColor(string color);
+        void SetVisibility(bool isVisible);
+        void SetX(int value);
+        void SetY(int value);
+
 
     }
 }
