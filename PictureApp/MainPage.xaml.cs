@@ -23,12 +23,13 @@ namespace PictureApp
     public sealed partial class MainPage : Page
     {
         private static Canvas canvasView;
+        private Dice dice;
         public MainPage()
         {
             this.InitializeComponent();
             canvasView = canvas;
 
-            MakePicture();
+            dice = new Dice();
         }
         /// <summary>
         /// Reference to the canvas in the user interface.
@@ -40,13 +41,11 @@ namespace PictureApp
                 return canvasView;
             }
         }
-        /// <summary>
-        /// Create picture.
-        /// </summary>
-        private void MakePicture()
+
+
+        private void RollDice_Click(object sender, RoutedEventArgs e)
         {
-            Picture image = new Picture();
+            dice.Roll();
         }
-        
     }
 }
