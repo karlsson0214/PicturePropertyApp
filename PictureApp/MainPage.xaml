@@ -9,6 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <StackPanel>
+        <Button Name="RollDice" Content="Roll" FontSize="40" Click="RollDice_Click" HorizontalAlignment="Center"/>
         <Canvas Name="canvas" />
     </StackPanel>
 </Page>

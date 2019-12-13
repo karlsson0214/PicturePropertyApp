@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PictureApp
 {
-    class Picture
+    class Dice
     {
         // fields
         private Square2D wall;
@@ -15,7 +15,7 @@ namespace PictureApp
         private Circle2D sun;
 
         // create picture
-        public Picture()
+        public Dice()
         {
             wall = new Square2D();
             wall.SetX(100);
@@ -45,6 +45,11 @@ namespace PictureApp
             sun.MakeVisible();
             // to be able to set breakpoint on next line
             sun.MakeVisible();
+        }
+
+        public void Roll()
+        {
+            throw new NotImplementedException();
         }
     }
 }
