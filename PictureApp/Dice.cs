@@ -49,7 +49,7 @@ namespace PictureApp
 
         public void Roll()
         {
-
+            
         }
     }
 }
