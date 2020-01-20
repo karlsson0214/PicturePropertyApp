@@ -9,6 +9,11 @@ namespace PictureApp
     class Dice
     {
         // fields
+        // to generate random numbers
+        private Random numberGenerator;
+
+        // replace with your dice
+        //...
         private Square2D wall;
         private Square2D window;
         private Triangle2D roof;
@@ -17,6 +22,9 @@ namespace PictureApp
         // create picture
         public Dice()
         {
+            numberGenerator = new Random();
+
+            // change code below to show die dots
             wall = new Square2D();
             wall.X = 100;
             wall.Y = 300;
@@ -49,7 +57,10 @@ namespace PictureApp
 
         public void Roll()
         {
-            
+            int numberOfDots = numberGenerator.Next(1, 7);
+
+            // write code to show or hide dots
         }
     }
 }
+
