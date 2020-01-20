@@ -11,6 +11,8 @@ namespace PictureApp
         // fields
         private Square2D wall;
 
+        // add your code here
+
 
         // create picture
         public Picture()
@@ -22,7 +24,7 @@ namespace PictureApp
             wall.Color = "Red";
             wall.IsVisible = true;
 
-           
+           // and add code here too
         }
     }
 }
