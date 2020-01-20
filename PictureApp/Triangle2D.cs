@@ -15,7 +15,7 @@ namespace PictureApp
         private string color = "Green";
 
         /// <summary>
-        /// Make a square object.
+        /// Make a triangle object.
         /// </summary>
         public Triangle2D()
         {
