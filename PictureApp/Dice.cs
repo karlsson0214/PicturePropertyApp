@@ -9,6 +9,8 @@ namespace PictureApp
     class Dice
     {
         // fields
+        private static Random randomGenerator;
+
         private Square2D wall;
         private Square2D window;
         private Triangle2D roof;
@@ -17,6 +19,11 @@ namespace PictureApp
         // create picture
         public Dice()
         {
+            randomGenerator = new Random();
+
+            // TODO 
+            // replace code below
+
             wall = new Square2D();
             wall.SetX(100);
             wall.SetY(300);
@@ -49,7 +56,9 @@ namespace PictureApp
 
         public void Roll()
         {
-            throw new NotImplementedException();
+            int numberOfDots = randomGenerator.Next(1, 7);
+
+            // Add code to hide or show dots
         }
     }
 }
